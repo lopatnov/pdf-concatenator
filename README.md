@@ -1,6 +1,6 @@
 # PDF concatenator
 
-This software concatenate pdf files.
+This software is a tool that concatenate pdf files.
 
 ![screenshot](./images/screenshot.png)
 
