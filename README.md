@@ -16,6 +16,7 @@ This software concatenate pdf files.
 
 6. Generate concatenated file
 
+Download [pdf-concatenator 1.0 for Windows](https://github.com/lopatnov/pdf-concatenator/releases/tag/1.0) link: https://github.com/lopatnov/pdf-concatenator/releases/tag/1.0
 
 
 
