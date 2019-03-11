@@ -2,12 +2,12 @@
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
-using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PdfConcatenator
@@ -18,8 +18,20 @@ namespace PdfConcatenator
 
         public MainForm()
         {
+            SetCulture();
             InitializeComponent();
-            openPdfFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            openPdfFileDialog.InitialDirectory = Directory.GetCurrentDirectory();            
+        }
+
+        static void SetCulture()
+        {
+            var appCulture = ConfigurationSettings.AppSettings.Get("AppCulture");
+            if (!string.IsNullOrEmpty(appCulture))
+            {
+                CultureInfo culture = new CultureInfo(appCulture);
+                Thread.CurrentThread.CurrentCulture = culture;
+                Thread.CurrentThread.CurrentUICulture = culture;
+            }
         }
 
         private void upDownItemPos_ValueChanged(object sender, EventArgs e)
@@ -111,7 +123,7 @@ namespace PdfConcatenator
             IEnumerable<string> files = listBoxFiles.Items.Cast<string>();
             if (files.Count() == 0)
             {
-                MessageBox.Show("Please, select at least one file");
+                MessageBox.Show(Properties.Resources.PleaseSelectFile);
                 return;
             }
 
@@ -131,7 +143,7 @@ namespace PdfConcatenator
                     {
                         if (!File.Exists(arg))
                         {
-                            MessageBox.Show($"Error: the file {arg} not found");
+                            MessageBox.Show(string.Format(Properties.Resources.ErrorFileNotFound, arg));
                         }
                         else
                         {
@@ -143,7 +155,7 @@ namespace PdfConcatenator
                     }
                     document.Close();
                 }
-                MessageBox.Show("Complete");
+                MessageBox.Show(Properties.Resources.Complete);
             }
             catch (Exception ex)
             {
@@ -155,7 +167,7 @@ namespace PdfConcatenator
         {
             while (ex != null)
             {
-                MessageBox.Show($"Exception: {ex.Message} \nSource: {ex.Source}\n{ex.StackTrace}");
+                MessageBox.Show(string.Format(Properties.Resources.Error, ex.Message, ex.Source, ex.StackTrace));
                 ex = ex.InnerException;
             }
         }
