@@ -135,7 +135,7 @@ namespace PdfConcatenator
 
                 Document document = new Document();
                 var output = new FileStream(outputFile, FileMode.Create);
-                using (PdfCopy copy = new PdfSmartCopy(document, output))
+                using (var copy = new PdfSmartCopy(document, output))
                 {
                     document.Open();
                     foreach (var arg in files)
