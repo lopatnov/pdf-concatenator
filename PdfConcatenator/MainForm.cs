@@ -146,6 +146,7 @@ namespace PdfConcatenator
                         }
                         else
                         {
+                            PdfReader.unethicalreading = true;
                             using (var reader = new PdfReader(arg))
                             {
                                 copy.AddDocument(reader);
@@ -183,5 +184,6 @@ namespace PdfConcatenator
             var pdfFiles = files.Where(x => x.EndsWith(".pdf", StringComparison.InvariantCultureIgnoreCase)).ToArray();
             listBoxFiles.Items.AddRange(pdfFiles);
         }
+
     }
 }
