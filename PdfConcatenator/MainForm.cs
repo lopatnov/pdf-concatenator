@@ -81,7 +81,6 @@ namespace PdfConcatenator
             {
                 listBoxFiles.Items.AddRange(openPdfFileDialog.FileNames);                
             }
-            openPdfFileDialog.Reset();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
