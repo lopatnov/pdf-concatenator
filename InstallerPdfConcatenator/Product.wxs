@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include Metadata.wxi ?>
+  
+  <Product Id="*" 
+           Language="1033" 
+           Name="$(var.Name)" 
+           Version="$(var.Version)" 
+           Manufacturer="$(var.Manufacturer)" 
+           UpgradeCode="$(var.UpgradeCode)">
+		<Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine"  />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="InstallerPdfConcatenator" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="cg_uk" />
+      <ComponentRef Id="ApplicationShortcut"/>
+      <ComponentRef Id="ApplicationShortcutDesktop"/>      
+		</Feature>
+	</Product>
+
+  <?include PackagesFolders.wxi ?>
+  <?include Directories.wxi ?>
+  <?include Files.wxi ?>
+  <?include StartMenu/Shortcut.wxi ?>
+  <?include Desktop/Shortcut.wxi ?>
+</Wix>

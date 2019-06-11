@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define UpgradeCode = "e08ec244-e3a4-4220-bdcd-ee447b924e8e" ?>
+  <?define Name = "PDF Concatenator" ?>
+  <?define Version = "1.2.0.0" ?>
+  <?define Manufacturer = "O.Lopatnov SP." ?>
+  <?define Description = "This software is a tool that concatenate pdf files" ?>
+</Include>

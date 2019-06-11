@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi"
+         xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="component_PdfConcatenator" Guid="{D6BA064B-243A-4A6C-9DEC-FBA231019C4A}">
+        <File Id="file_PdfConcatenator" Name="PdfConcatenator.exe" Source="$(var.PdfConcatenator.TargetPath)" />
+      </Component>
+      <Component Id="component_PdfConcatenatorConfig" Guid="{BE94F72C-E354-4A65-B00C-123FA0616238}">
+        <File Id="file_PdfConcatenatorConfig" Name="PdfConcatenator.exe.config" Source="$(var.PdfConcatenator.TargetDir)PdfConcatenator.exe.config" />
+      </Component>
+      <Component Id="component_itextsharp" Guid="{E829F1D6-0226-4DC4-A51B-5E1932680752}">
+        <File Id="file_itextsharp" Name="itextsharp.dll" Source="$(var.iTextSharp_TargetDir)itextsharp.dll" />
+      </Component>      
+    </ComponentGroup>
+    <ComponentGroup Id="cg_uk" Directory="directory_uk">
+      <Component Id="component_resources_uk" Guid="{07BC15D7-1D2A-4F41-81E0-55B6715BE254}">
+        <File Id="file_resources_uk" Name="PdfConcatenator.resources.dll" Source="$(var.PdfConcatenator.TargetDir)uk/PdfConcatenator.resources.dll" />
+      </Component>
+    </ComponentGroup>    
+  </Fragment>
+</Include>

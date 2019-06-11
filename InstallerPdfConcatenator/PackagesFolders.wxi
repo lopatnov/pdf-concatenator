@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- Packages variables -->
+  <?define Packages_TargetDir = "$(var.SolutionDir)packages/"?>
+  <?define iTextSharp_TargetDir = "$(var.Packages_TargetDir)iTextSharp.5.5.13/lib/"?>  
+</Include>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="{0090AE94-036D-43C0-A49C-629D6F881351}">
+        <Shortcut Id="ApplicationDesktopShortcut"
+                  Name="$(var.Name)"
+                  Description="$(var.Description)"
+                  Target="[#file_PdfConcatenator]"
+                  Arguments="-browse"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.Name)" Name="desktopIcon" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Include>

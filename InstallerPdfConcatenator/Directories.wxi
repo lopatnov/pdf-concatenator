@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="$(var.Name)">
+          <Directory Id="directory_uk" Name="uk" />
+        </Directory>
+      </Directory>
+      <!-- Start Menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)"/>
+      </Directory>
+      <!-- Desktop -->
+      <Directory Id="DesktopFolder" Name="Desktop"></Directory>
+    </Directory>
+  </Fragment>
+</Include>
