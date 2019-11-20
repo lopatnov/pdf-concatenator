@@ -16,7 +16,7 @@ This software is a tool that concatenate pdf files.
 
 6. Generate concatenated file
 
-Download pdf-concatenator for Windows by link: [https://github.com/lopatnov/pdf-concatenator/releases](https://github.com/lopatnov/pdf-concatenator/releases)
+Download pdf-concatenator for Windows by link: [https://github.com/lopatnov/pdf-concatenator/releases](https://github.com/lopatnov/pdf-concatenator/releases).
 
 
 
